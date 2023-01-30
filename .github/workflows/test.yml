@@ -17,6 +17,7 @@ jobs:
       - uses: iterative/setup-cml@v1
       - name: dump refs
         run: |
+          cml ci
           cat .git/config
           echo "git branch -l"
           git --no-pager branch -l
