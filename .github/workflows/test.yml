@@ -17,5 +17,11 @@ jobs:
       - name: dump refs
         run: |
           cat .git/config
+          echo "git branch -l"
           git --no-pager branch -l
+          echo "git diff origin/main origin/some-branch"
+          git --no-pager diff origin/main origin/some-branch
+          echo "git diff refs/remotes/origin/main refs/remotes/origin/some-branch"
+          git --no-pager diff refs/remotes/origin/main refs/remotes/origin/some-branch
+          echo "tree .git/refs"
           tree .git/refs
