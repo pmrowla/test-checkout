@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-
+      - uses: iterative/setup-cml@v1
       - name: dump refs
         run: |
           cat .git/config
