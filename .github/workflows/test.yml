@@ -1,0 +1,20 @@
+name: Test checkout
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test:
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: dump refs
+        run: |
+          cat .git/config
+          git --no-pager branch -l
+          tree .git/refs
